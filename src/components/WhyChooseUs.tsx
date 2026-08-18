@@ -1,30 +1,35 @@
 import { motion } from "framer-motion";
-import { Clock, BadgeCheck, Wrench, ShieldCheck } from "lucide-react";
+import {
+  Clock,
+  ClipboardCheck,
+  ShieldCheck,
+  Building2,
+} from "lucide-react";
 
 const reasons = [
   {
     icon: Clock,
-    title: "Experienced",
+    title: "30+ Years",
     description:
-      "Over 30 years of practical construction experience.",
+      "Established in 1993 with more than three decades of construction experience.",
   },
   {
-    icon: BadgeCheck,
-    title: "Quality Driven",
+    icon: ClipboardCheck,
+    title: "Full Project Delivery",
     description:
-      "Professional workmanship and attention to detail.",
-  },
-  {
-    icon: Wrench,
-    title: "Versatile",
-    description:
-      "Multiple construction disciplines managed under one team.",
+      "Capability from quantities and costing through construction, coordination and completion.",
   },
   {
     icon: ShieldCheck,
-    title: "Professional",
+    title: "Insurance Expertise",
     description:
-      "Reliable communication and professional project delivery.",
+      "Specialist knowledge in insurance reinstatement and fire-damaged property rebuilding.",
+  },
+  {
+    icon: Building2,
+    title: "Proven Client Experience",
+    description:
+      "Experience serving institutional, diplomatic, insurance and industrial clients.",
   },
 ];
 
@@ -45,11 +50,16 @@ export function WhyChooseUs() {
             The Herla Difference
           </div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold uppercase leading-[1.05]">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold uppercase leading-[1.05] mb-4">
             Why Choose
             <br />
             Herla.
           </h2>
+
+          <p className="text-muted-foreground text-base md:text-lg max-w-2xl leading-relaxed">
+            Practical experience, accountable project delivery and specialist
+            construction knowledge built over more than three decades.
+          </p>
         </motion.div>
 
         {/* Reasons */}
