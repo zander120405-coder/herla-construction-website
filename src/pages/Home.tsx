@@ -5,6 +5,7 @@ import { Services } from "@/components/Services";
 import { FeaturedProjects } from "@/components/FeaturedProjects";
 import { About } from "@/components/About";
 import { InsuranceExpertise } from "@/components/InsuranceExpertise";
+import { ClientExperience } from "@/components/ClientExperience";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { CallToAction } from "@/components/CallToAction";
 import { Contact } from "@/components/Contact";
@@ -23,6 +24,7 @@ export default function Home() {
         <FeaturedProjects />
         <About />
         <InsuranceExpertise />
+        <ClientExperience />
         <WhyChooseUs />
         <CallToAction />
         <Contact />
