@@ -9,15 +9,17 @@ export function NavBar() {
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
+
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
     { name: "Services", href: "#services" },
+    { name: "Our Work", href: "#projects" },
     { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Why Us", href: "#why-us" },
+    { name: "Why Herla", href: "#why-us" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -36,12 +38,12 @@ export function NavBar() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
 
-          {/* Logo — switches variant on scroll */}
+          {/* Logo */}
           <a href="#" className="hover:opacity-80 transition-opacity">
             <Logo size="md" variant={isScrolled ? "dark" : "light"} />
           </a>
 
-          {/* Desktop Nav */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             <ul className="flex items-center gap-6">
               {navLinks.map((link) => (
@@ -55,29 +57,39 @@ export function NavBar() {
                 </li>
               ))}
             </ul>
+
             <Button
               asChild
               size="lg"
               className="rounded-none font-bold uppercase tracking-widest bg-primary hover:bg-primary/90 text-primary-foreground shadow-none"
             >
-              <a href="#contact">Get a Quote</a>
+              <a href="#contact">Request a Quote</a>
             </Button>
           </div>
 
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Menu */}
           <button
-            className={`md:hidden p-2 transition-colors ${isScrolled ? "text-foreground" : "text-white"}`}
+            className={`md:hidden p-2 transition-colors ${
+              isScrolled ? "text-foreground" : "text-white"
+            }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Open navigation menu"
           >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
+
         </div>
       </div>
 
-      {/* Mobile Nav */}
+      {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-border shadow-lg py-4">
-          <div className="container mx-auto px-4 flex flex-col gap-4">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-border shadow-lg py-5">
+          <div className="container mx-auto px-4 flex flex-col gap-5">
+
             <ul className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <li key={link.name}>
@@ -91,12 +103,19 @@ export function NavBar() {
                 </li>
               ))}
             </ul>
+
             <Button
               asChild
               className="w-full rounded-none font-bold uppercase tracking-widest bg-primary hover:bg-primary/90 text-primary-foreground"
             >
-              <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Get a Quote</a>
+              <a
+                href="#contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Request a Quote
+              </a>
             </Button>
+
           </div>
         </div>
       )}
