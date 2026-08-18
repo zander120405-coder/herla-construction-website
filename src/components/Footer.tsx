@@ -2,7 +2,7 @@ import {
   Phone,
   Mail,
   MessageCircle,
-  Clock,
+  MapPin,
 } from "lucide-react";
 import { Logo } from "@/components/Logo";
 
@@ -24,7 +24,8 @@ export function Footer() {
             </a>
 
             <p className="text-muted-foreground text-sm max-w-sm leading-relaxed">
-              Construction, renovations and specialist building services across Gauteng since 1993.
+              Pretoria-based construction company delivering residential,
+              commercial and industrial projects since 1993.
             </p>
           </div>
 
@@ -94,8 +95,10 @@ export function Footer() {
               </li>
 
               <li className="flex items-center gap-3">
-                <Clock className="w-4 h-4 text-primary" />
-                <span className="text-sm">Mon – Sat, 9:00 AM – 4:00 PM</span>
+                <MapPin className="w-4 h-4 text-primary" />
+                <span className="text-sm">
+                  Pretoria, Gauteng, South Africa
+                </span>
               </li>
             </ul>
           </div>
@@ -108,7 +111,7 @@ export function Footer() {
           </p>
 
           <p className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
-            Gauteng, South Africa
+            Established 1993 · Pretoria, Gauteng
           </p>
         </div>
 
