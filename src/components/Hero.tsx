@@ -11,28 +11,37 @@ export function Hero() {
 
         <img
           src="/hero.png"
-          alt="Herla Construction commercial construction, new builds and renovations across Gauteng"
+          alt="Herla Construction residential, commercial and industrial construction in Gauteng"
           className="w-full h-full object-cover object-center opacity-60"
         />
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-20 py-20">
-        <div className="max-w-3xl">
+        <div className="max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
+            {/* Location */}
+            <div className="inline-flex items-center gap-2 mb-6 text-[#CC9633] text-xs font-bold uppercase tracking-[0.2em]">
+              Pretoria Based · Serving Gauteng
+            </div>
+
+            {/* Main heading */}
             <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-display font-extrabold text-white uppercase leading-[0.95] mb-6">
-              Commercial Construction.
+              Construction.
               <br />
               <span className="text-[#CC9633]">Built Right.</span>
             </h1>
 
+            {/* Description */}
             <p className="text-lg md:text-xl text-white/70 mb-8 max-w-2xl font-sans font-light leading-relaxed">
-              Commercial construction, new builds and renovations across Gauteng.
+              Residential, commercial and industrial construction backed by
+              more than 30 years of experience.
             </p>
 
+            {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button
                 asChild
@@ -61,6 +70,7 @@ export function Hero() {
               </Button>
             </div>
 
+            {/* Trust line */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -75,7 +85,7 @@ export function Hero() {
               ))}
 
               <span className="ml-1 font-medium">
-                Trusted across Gauteng since 1993
+                Established 1993 · Pretoria, Gauteng
               </span>
             </motion.div>
           </motion.div>
