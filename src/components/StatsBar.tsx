@@ -1,30 +1,30 @@
 import { motion } from "framer-motion";
-import { FileText, MapPin, MessageCircle, CalendarDays } from "lucide-react";
+import { Clock, MapPin, Building2, Layers3 } from "lucide-react";
 
 const stats = [
   {
-    icon: FileText,
-    value: "Free",
-    label: "Quotations",
-    detail: "No cost, no obligation",
+    icon: Clock,
+    value: "30+",
+    label: "Years Experience",
+    detail: "Established in 1993",
   },
   {
     icon: MapPin,
-    value: "Gauteng",
-    label: "Service Area",
+    value: "Pretoria",
+    label: "Gauteng Based",
     detail: "Serving clients across Gauteng",
   },
   {
-    icon: MessageCircle,
-    value: "WhatsApp",
-    label: "Quick Contact",
-    detail: "Message us directly",
+    icon: Building2,
+    value: "Up to R10M",
+    label: "Project Value",
+    detail: "Commercial & industrial construction",
   },
   {
-    icon: CalendarDays,
-    value: "Mon–Sat",
-    label: "Available",
-    detail: "Ready to discuss your project",
+    icon: Layers3,
+    value: "3 Sectors",
+    label: "Construction",
+    detail: "Residential • Commercial • Industrial",
   },
 ];
 
@@ -53,9 +53,11 @@ export function StatsBar() {
                   <div className="text-2xl font-display font-bold text-[#1A1A1A] leading-none">
                     {stat.value}
                   </div>
+
                   <div className="text-sm font-bold uppercase tracking-wider text-[#1A1A1A] mt-0.5">
                     {stat.label}
                   </div>
+
                   <div className="text-xs text-[#1A1A1A]/60 mt-0.5">
                     {stat.detail}
                   </div>
