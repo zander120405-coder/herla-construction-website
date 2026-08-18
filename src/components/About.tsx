@@ -5,15 +5,15 @@ import { Button } from "@/components/ui/button";
 const values = [
   {
     title: "30+ Years",
-    desc: "Construction experience since 1993.",
+    desc: "Established in 1993 with more than three decades of construction experience.",
   },
   {
-    title: "Quality",
-    desc: "Professional workmanship from start to finish.",
+    title: "Full Project Delivery",
+    desc: "From quantities and costing through construction, coordination and completion.",
   },
   {
-    title: "Reliable",
-    desc: "Clear communication and dependable project delivery.",
+    title: "Proven Capability",
+    desc: "Residential, commercial and industrial construction across multiple disciplines.",
   },
 ];
 
@@ -70,11 +70,17 @@ export function About() {
               Experience.
             </h2>
 
-            <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-8 max-w-xl">
-              Herla Construction has delivered residential, commercial and
-              industrial construction solutions across Gauteng since 1993,
-              combining hands-on experience with reliable project delivery and
-              quality workmanship.
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-5 max-w-xl">
+              Herla Construction is a privately owned construction company
+              established in 1993 and based in Pretoria, Gauteng.
+            </p>
+
+            <p className="text-muted-foreground text-base leading-relaxed mb-8 max-w-xl">
+              With experience across residential, commercial and industrial
+              projects, Herla combines practical construction knowledge,
+              project coordination and attention to detail to manage work from
+              initial scope and costing through to construction, specialist
+              installations and completion.
             </p>
 
             {/* Values */}
@@ -82,9 +88,11 @@ export function About() {
               {values.map((value) => (
                 <div key={value.title}>
                   <div className="w-6 h-[2px] bg-primary mb-3" />
+
                   <h3 className="font-display font-bold uppercase tracking-wide mb-1">
                     {value.title}
                   </h3>
+
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {value.desc}
                   </p>
