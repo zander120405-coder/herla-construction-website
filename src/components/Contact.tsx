@@ -4,8 +4,6 @@ import {
   Phone,
   Mail,
   MessageCircle,
-  Clock,
-  PhoneCall,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -27,12 +25,6 @@ const contactItems = [
     href: "tel:+27826554815",
   },
   {
-    icon: PhoneCall,
-    label: "Office",
-    value: "012 567 1902",
-    href: "tel:+27125671902",
-  },
-  {
     icon: Mail,
     label: "Email",
     value: "herla@telkomsa.net",
@@ -40,14 +32,8 @@ const contactItems = [
   },
   {
     icon: MapPin,
-    label: "Service Area",
-    value: "Gauteng",
-    href: null,
-  },
-  {
-    icon: Clock,
-    label: "Hours",
-    value: "Mon – Sat, 9:00 AM – 4:00 PM",
+    label: "Location",
+    value: "Pretoria, Gauteng, South Africa",
     href: null,
   },
 ];
@@ -68,7 +54,7 @@ export function Contact() {
 
 My name is ${name}.
 My contact number is ${phone}.
-Job type: ${jobType || "Not specified"}.
+Service required: ${jobType || "Not specified"}.
 
 Project details:
 ${message}
@@ -99,6 +85,7 @@ I would like to request a quotation.`;
           </h2>
 
           <p className="text-muted-foreground text-base mt-4 max-w-xl">
+            Based in Pretoria and serving clients across Gauteng.
             Contact us directly or send your project details for a quotation.
           </p>
         </div>
@@ -228,21 +215,61 @@ I would like to request a quotation.`;
                   </SelectTrigger>
 
                   <SelectContent className="rounded-none">
-                    <SelectItem value="Renovations">Renovations</SelectItem>
-                    <SelectItem value="New Build">New Build</SelectItem>
-                    <SelectItem value="Electrical">Electrical</SelectItem>
-                    <SelectItem value="Carpentry">Carpentry</SelectItem>
-                    <SelectItem value="Interior Design">
-                      Interior Design
+                    <SelectItem value="Residential Construction">
+                      Residential Construction
                     </SelectItem>
-                    <SelectItem value="Painting & Waterproofing">
-                      Painting & Waterproofing
+
+                    <SelectItem value="Commercial Construction">
+                      Commercial Construction
                     </SelectItem>
-                    <SelectItem value="Shopfitting">Shopfitting</SelectItem>
-                    <SelectItem value="Structural Repairs">
-                      Structural Repairs
+
+                    <SelectItem value="Industrial Construction">
+                      Industrial Construction
                     </SelectItem>
-                    <SelectItem value="Other">Other</SelectItem>
+
+                    <SelectItem value="Renovations">
+                      Renovations
+                    </SelectItem>
+
+                    <SelectItem value="Project Management">
+                      Project Management
+                    </SelectItem>
+
+                    <SelectItem value="Electrical & Compliance">
+                      Electrical & Compliance
+                    </SelectItem>
+
+                    <SelectItem value="Solar Installation">
+                      Solar Installation
+                    </SelectItem>
+
+                    <SelectItem value="Roofing">
+                      Roofing
+                    </SelectItem>
+
+                    <SelectItem value="Kitchen / Built-In Cupboards">
+                      Kitchen / Built-In Cupboards
+                    </SelectItem>
+
+                    <SelectItem value="Shopfitting">
+                      Shopfitting
+                    </SelectItem>
+
+                    <SelectItem value="Bills of Quantities">
+                      Bills of Quantities
+                    </SelectItem>
+
+                    <SelectItem value="Insurance / Fire Damage Reinstatement">
+                      Insurance / Fire Damage Reinstatement
+                    </SelectItem>
+
+                    <SelectItem value="Maintenance / Repairs">
+                      Maintenance / Repairs
+                    </SelectItem>
+
+                    <SelectItem value="Other">
+                      Other
+                    </SelectItem>
                   </SelectContent>
                 </Select>
               </div>
