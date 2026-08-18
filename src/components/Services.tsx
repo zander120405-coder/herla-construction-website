@@ -11,54 +11,60 @@ import {
   Truck,
   Warehouse,
   ArrowRight,
+  Sun,
+  Home,
+  FileText,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const services = [
   {
-    icon: Hammer,
-    title: "Renovations",
+    icon: Building2,
+    title: "Commercial & Industrial Construction",
     description:
-      "Complete residential and commercial renovations, upgrades and property refurbishments.",
+      "Commercial and industrial construction projects up to R10 million, managed from scope and costing through to completion.",
   },
   {
-    icon: Building2,
-    title: "New Builds",
+    icon: Hammer,
+    title: "Residential Development & Renovations",
     description:
-      "Residential and commercial construction managed from site preparation through to final finishes.",
+      "Residential construction, alterations, renovations, property development and refurbishment.",
+  },
+  {
+    icon: ClipboardList,
+    title: "Project Management",
+    description:
+      "Coordination of contractors, programme, quality, costing and project delivery from start to finish.",
   },
   {
     icon: Zap,
-    title: "Electrical",
+    title: "Electrical & Compliance",
     description:
-      "Electrical installations, compliance inspections, fault finding and maintenance.",
+      "Electrical installations, maintenance and compliance certification for existing installations.",
   },
   {
-    icon: Scissors,
-    title: "Carpentry",
+    icon: Sun,
+    title: "Solar Installations",
     description:
-      "Built-in cupboards, cabinetry, structural timber work and custom woodwork.",
+      "Solar installation services integrated with residential, commercial and industrial projects.",
   },
   {
-    icon: LayoutDashboard,
-    title: "Interior Design",
+    icon: Home,
+    title: "Roofing",
     description:
-      "Space planning, material selection and interior design integrated with construction.",
-  },
-  {
-    icon: PaintBucket,
-    title: "Painting & Waterproofing",
-    description:
-      "Interior and exterior painting, surface preparation and waterproofing.",
+      "Specialist roofing services for new construction, repairs, maintenance and refurbishment work.",
   },
 ];
 
 const additionalServices = [
-  { icon: Wrench, title: "Structural Repairs & Underpinning" },
-  { icon: ClipboardList, title: "Project Management & QS" },
+  { icon: FileText, title: "Bills of Quantities" },
+  { icon: Scissors, title: "Kitchens & Built-In Cupboards" },
   { icon: Building2, title: "Shopfitting" },
+  { icon: PaintBucket, title: "Painting & Refurbishment" },
+  { icon: Wrench, title: "Maintenance & Repairs" },
   { icon: Truck, title: "Demolition" },
   { icon: Warehouse, title: "Warehousing" },
+  { icon: LayoutDashboard, title: "Interior Planning & Finishes" },
 ];
 
 export function Services() {
@@ -84,8 +90,9 @@ export function Services() {
           </h2>
 
           <p className="text-muted-foreground text-base leading-relaxed">
-            Construction, renovation and specialist services for residential,
-            commercial and industrial projects across Gauteng.
+            Based in Pretoria and serving Gauteng, Herla delivers residential,
+            commercial and industrial construction together with specialist
+            project and building services.
           </p>
         </motion.div>
 
