@@ -25,7 +25,7 @@ const projects = [
 
 export function FeaturedProjects() {
   return (
-    <section className="py-20 md:py-24 bg-white">
+    <section id="projects" className="py-20 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
 
         {/* Header */}
@@ -44,12 +44,14 @@ export function FeaturedProjects() {
           </div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold uppercase leading-[1.02] mb-4 text-foreground">
-            Our Work.<br />
+            Our Work.
+            <br />
             Built to Last.
           </h2>
 
           <p className="text-muted-foreground text-base md:text-lg max-w-2xl leading-relaxed">
-            A look at residential construction and renovation work completed by Herla across Gauteng.
+            A look at residential construction and renovation work completed by
+            Herla across Gauteng.
           </p>
         </motion.div>
 
