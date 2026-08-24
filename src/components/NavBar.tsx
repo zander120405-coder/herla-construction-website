@@ -1,124 +1,147 @@
-import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import {
+  ChevronDown,
+  Menu,
+  X,
+  Home,
+  Building2,
+  Factory,
+  Hammer,
+  ClipboardList,
+  ShieldCheck,
+  BriefcaseBusiness,
+  Info,
+  Phone,
+  ArrowRight,
+} from "lucide-react";
 import { Logo } from "@/components/Logo";
 
 export function NavBar() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const navLinks = [
-    { name: "Services", href: "#services" },
-    { name: "Our Work", href: "#projects" },
-    { name: "About", href: "#about" },
-    { name: "Why Herla", href: "#why-us" },
-    { name: "Contact", href: "#contact" },
-  ];
-
-  const linkClass = isScrolled
-    ? "text-foreground/70 hover:text-primary"
-    : "text-white/80 hover:text-white";
+  const toggleDropdown = (name: string) => {
+    setOpenDropdown(openDropdown === name ? null : name);
+  };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${
-        isScrolled
-          ? "bg-white/95 backdrop-blur-md border-b border-border shadow-sm py-3"
-          : "bg-transparent py-5"
-      }`}
-    >
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between">
+    <nav className="relative z-50 border-b border-white/10 bg-[#06111f]">
+      <div className="mx-auto flex h-[84px] max-w-[1500px] items-center justify-between px-6 md:px-10 lg:px-14">
+        {/* Logo */}
+        <a href="/" className="flex items-center transition-opacity hover:opacity-85">
+          <Logo size="md" variant="light" />
+        </a>
 
-          {/* Logo */}
-          <a href="#" className="hover:opacity-80 transition-opacity">
-            <Logo size="md" variant={isScrolled ? "dark" : "light"} />
+        {/* Desktop Navigation */}
+        <div className="hidden items-center gap-7 lg:flex">
+          <a
+            href="/"
+            className="border-b-2 border-[#0869ff] pb-1 text-xs font-bold uppercase tracking-[0.08em] text-[#0869ff]"
+          >
+            Home
           </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            <ul className="flex items-center gap-6">
-              {navLinks.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className={`nav-link text-sm font-semibold uppercase tracking-wider transition-colors ${linkClass}`}
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-
-            <Button
-              asChild
-              size="lg"
-              className="rounded-none font-bold uppercase tracking-widest bg-primary hover:bg-primary/90 text-primary-foreground shadow-none"
+          {/* Services */}
+          <div className="relative">
+            <button
+              type="button"
+              onClick={() => toggleDropdown("services")}
+              className="flex items-center gap-1 text-xs font-bold uppercase tracking-[0.08em] text-white/85 transition-colors hover:text-white"
             >
-              <a href="#contact">Request a Quote</a>
-            </Button>
-          </div>
+              Services
+              <ChevronDown className="h-4 w-4" />
+            </button>
 
-          {/* Mobile Menu */}
-          <button
-            className={`md:hidden p-2 transition-colors ${
-              isScrolled ? "text-foreground" : "text-white"
-            }`}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Open navigation menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
+            {openDropdown === "services" && (
+              <div className="absolute left-0 top-full mt-5 w-[320px] border border-white/10 bg-[#091827] shadow-2xl">
+                <a
+                  href="/services/residential"
+                  className="flex items-start gap-3 border-b border-white/10 px-5 py-4 text-white transition-colors hover:bg-white/5"
+                >
+                  <Home className="mt-0.5 h-5 w-5 text-[#0869ff]" />
+                  <div>
+                    <div className="text-xs font-bold uppercase">
+                      Residential Construction
+                    </div>
+                    <div className="mt-1 text-[11px] text-white/55">
+                      New builds, alterations, renovations & property development
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="/services/commercial"
+                  className="flex items-start gap-3 border-b border-white/10 px-5 py-4 text-white transition-colors hover:bg-white/5"
+                >
+                  <Building2 className="mt-0.5 h-5 w-5 text-[#0869ff]" />
+                  <div>
+                    <div className="text-xs font-bold uppercase">
+                      Commercial Construction
+                    </div>
+                    <div className="mt-1 text-[11px] text-white/55">
+                      Projects up to R10 million
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="/services/industrial"
+                  className="flex items-start gap-3 border-b border-white/10 px-5 py-4 text-white transition-colors hover:bg-white/5"
+                >
+                  <Factory className="mt-0.5 h-5 w-5 text-[#0869ff]" />
+                  <div>
+                    <div className="text-xs font-bold uppercase">
+                      Industrial Construction
+                    </div>
+                    <div className="mt-1 text-[11px] text-white/55">
+                      Projects up to R10 million
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="/services/project-management"
+                  className="flex items-start gap-3 border-b border-white/10 px-5 py-4 text-white transition-colors hover:bg-white/5"
+                >
+                  <ClipboardList className="mt-0.5 h-5 w-5 text-[#0869ff]" />
+                  <div>
+                    <div className="text-xs font-bold uppercase">
+                      Project Management
+                    </div>
+                    <div className="mt-1 text-[11px] text-white/55">
+                      Planning, coordination, contractors, quality & delivery
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="/services/specialist"
+                  className="flex items-start gap-3 px-5 py-4 text-white transition-colors hover:bg-white/5"
+                >
+                  <Hammer className="mt-0.5 h-5 w-5 text-[#0869ff]" />
+                  <div>
+                    <div className="text-xs font-bold uppercase">
+                      Specialist Services
+                    </div>
+                    <div className="mt-1 text-[11px] text-white/55">
+                      BOQ, electrical, solar, roofing, kitchens, shopfitting & more
+                    </div>
+                  </div>
+                </a>
+              </div>
             )}
-          </button>
-
-        </div>
-      </div>
-
-      {/* Mobile Navigation */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-border shadow-lg py-5">
-          <div className="container mx-auto px-4 flex flex-col gap-5">
-
-            <ul className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="block text-sm font-semibold uppercase tracking-wider text-foreground/70 hover:text-primary transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-
-            <Button
-              asChild
-              className="w-full rounded-none font-bold uppercase tracking-widest bg-primary hover:bg-primary/90 text-primary-foreground"
-            >
-              <a
-                href="#contact"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Request a Quote
-              </a>
-            </Button>
-
           </div>
-        </div>
-      )}
-    </nav>
-  );
-}
+
+          {/* Experience */}
+          <div className="relative">
+            <button
+              type="button"
+              onClick={() => toggleDropdown("experience")}
+              className="flex items-center gap-1 text-xs font-bold uppercase tracking-[0.08em] text-white/85 transition-colors hover:text-white"
+            >
+              Experience
+              <ChevronDown className="h-4 w-4" />
+            </button>
+
+            {openDropdown === "experience" && (
+              <div className="absolute left-0 top-full mt-5 w-[260
