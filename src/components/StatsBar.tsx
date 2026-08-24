@@ -15,7 +15,7 @@ const stats = [
   {
     icon: BarChart3,
     title: "PROJECTS UP TO R10M",
-    detail: "Commercial & Industrial",
+    detail: "Commercial, Residential & Industrial",
   },
   {
     icon: ShieldCheck,
@@ -30,36 +30,36 @@ const stats = [
   {
     icon: UserRoundCheck,
     title: "PROFESSIONAL LOSS ADJUSTER",
-    detail: "ILASA registered • Insurance reinstatement",
+    detail: "ILASA registered loss adjuster with expertise in reinstatement",
   },
 ];
 
 export function StatsBar() {
   return (
-    <section className="relative z-20 border-t border-white/10 bg-[#06111f]">
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10 lg:px-14">
-        <div className="grid grid-cols-2 divide-x divide-white/10 lg:grid-cols-5">
-          {stats.map((stat) => {
+    <section className="relative z-30 h-[105px] flex-shrink-0 border-t border-white/10 bg-[#06111f]">
+      <div className="mx-auto h-full max-w-[1600px] px-6">
+        <div className="grid h-full grid-cols-5">
+          {stats.map((stat, index) => {
             const Icon = stat.icon;
 
             return (
               <div
                 key={stat.title}
-                className="flex min-h-[92px] items-center gap-4 px-4 py-4 lg:px-5"
+                className={`flex items-center gap-4 px-5 ${
+                  index !== 0 ? "border-l border-white/10" : ""
+                }`}
               >
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center">
-                  <Icon
-                    strokeWidth={1.8}
-                    className="h-8 w-8 text-[#0869ff]"
-                  />
-                </div>
+                <Icon
+                  strokeWidth={1.8}
+                  className="h-8 w-8 flex-shrink-0 text-[#0874ff]"
+                />
 
-                <div className="min-w-0">
-                  <div className="text-[11px] font-extrabold uppercase leading-tight tracking-[0.03em] text-white md:text-xs">
+                <div>
+                  <div className="text-[11px] font-extrabold uppercase leading-tight text-white">
                     {stat.title}
                   </div>
 
-                  <div className="mt-1 text-[10px] leading-snug text-white/65 md:text-[11px]">
+                  <div className="mt-1 text-[10px] leading-snug text-white/65">
                     {stat.detail}
                   </div>
                 </div>
