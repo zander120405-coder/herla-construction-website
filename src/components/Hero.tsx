@@ -1,98 +1,77 @@
 import { motion } from "framer-motion";
-import { ArrowRight, MessageCircle, Star } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight, Phone } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[100dvh] flex items-center pt-24 overflow-hidden bg-[#0d0d0d]">
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0d0d0d]/95 via-[#0d0d0d]/80 to-[#0d0d0d]/40 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-transparent to-transparent z-10" />
-
+    <section className="relative flex min-h-0 flex-1 items-center overflow-hidden bg-[#06111f]">
+      {/* Background image */}
+      <div className="absolute inset-0">
         <img
           src="/hero.png"
-          alt="Herla Construction residential, commercial and industrial construction in Gauteng"
-          className="w-full h-full object-cover object-center opacity-60"
+          alt="Herla Construction"
+          className="h-full w-full object-cover object-center"
         />
+
+        {/* Dark overlays */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#06111f] via-[#06111f]/88 to-[#06111f]/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#06111f]/95 via-transparent to-[#06111f]/25" />
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-20 py-20">
-        <div className="max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            {/* Location */}
-            <div className="inline-flex items-center gap-2 mb-6 text-[#CC9633] text-xs font-bold uppercase tracking-[0.2em]">
-              Pretoria Based · Serving Gauteng
-            </div>
+      {/* Main hero content */}
+      <div className="relative z-10 mx-auto flex h-full w-full max-w-[1500px] items-center px-6 md:px-10 lg:px-14">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.65, ease: "easeOut" }}
+          className="max-w-[620px]"
+        >
+          {/* Since */}
+          <div className="mb-3 flex items-center gap-3">
+            <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#0869ff]">
+              Since 1993
+            </span>
 
-            {/* Main heading */}
-            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-display font-extrabold text-white uppercase leading-[0.95] mb-6">
-              Construction.
-              <br />
-              <span className="text-[#CC9633]">Built Right.</span>
-            </h1>
+            <span className="h-[2px] w-12 bg-[#0869ff]" />
+          </div>
 
-            {/* Description */}
-            <p className="text-lg md:text-xl text-white/70 mb-8 max-w-2xl font-sans font-light leading-relaxed">
-              Residential, commercial and industrial construction backed by
-              more than 30 years of experience.
-            </p>
+          {/* Heading */}
+          <h1 className="mb-4 font-display text-[3.1rem] font-black uppercase leading-[0.93] tracking-[-0.025em] text-white sm:text-[3.8rem] md:text-[4.6rem] lg:text-[5rem]">
+            Built on Experience.
+            <br />
+            <span className="text-[#0869ff]">
+              Delivered with Accountability.
+            </span>
+          </h1>
 
-            {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button
-                asChild
-                size="lg"
-                className="btn-scale rounded-none h-14 px-8 text-sm font-bold uppercase tracking-widest bg-[#25D366] hover:bg-[#20bd5a] text-white group shadow-none"
-              >
-                <a
-                  href="https://wa.me/27826554815"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  WhatsApp Us
-                </a>
-              </Button>
+          {/* Description */}
+          <p className="mb-6 max-w-[560px] text-base leading-relaxed text-white/85 md:text-lg">
+            Residential, commercial and industrial construction with
+            end-to-end project management.
+          </p>
 
-              <Button
-                asChild
-                size="lg"
-                className="btn-scale btn-gold rounded-none h-14 px-8 text-sm font-bold uppercase tracking-widest bg-[#CC9633] text-[#1A1A1A] group shadow-none"
-              >
-                <a href="#contact">
-                  Request a Quote
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </Button>
-            </div>
-
-            {/* Trust line */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex items-center gap-2 text-white/55 text-sm"
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="/quote"
+              className="group inline-flex h-14 items-center justify-center gap-3 bg-[#0869ff] px-8 text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-[#075cd9]"
             >
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="w-3.5 h-3.5 text-[#CC9633] fill-[#CC9633]"
-                />
-              ))}
+              Get a Quote
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </a>
 
-              <span className="ml-1 font-medium">
-                Established 1993 · Pretoria, Gauteng
-              </span>
-            </motion.div>
-          </motion.div>
-        </div>
+            <a
+              href="/contact"
+              className="inline-flex h-14 items-center justify-center gap-3 border border-white/65 bg-[#06111f]/45 px-8 text-sm font-bold uppercase tracking-wide text-white backdrop-blur-sm transition-all hover:border-white hover:bg-white/10"
+            >
+              Contact Us
+              <Phone className="h-4 w-4" />
+            </a>
+          </div>
+        </motion.div>
       </div>
 
-      <div className="absolute left-8 md:left-12 top-0 bottom-0 w-[1px] bg-white/10 z-10 hidden md:block" />
+      {/* Subtle bottom shadow */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#06111f] to-transparent" />
     </section>
   );
 }
