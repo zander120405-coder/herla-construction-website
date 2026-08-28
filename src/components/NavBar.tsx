@@ -1,4 +1,4 @@
-import { ChevronDown, ArrowRight } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { Logo } from "@/components/Logo";
 
 export function NavBar() {
@@ -44,13 +44,6 @@ export function NavBar() {
             Contact
           </a>
 
-          <a
-            href="/quote"
-            className="ml-2 flex h-11 items-center gap-2 bg-[#0874ff] px-6 text-[11px] font-bold uppercase text-white transition hover:bg-[#0064e6]"
-          >
-            Get a Quote
-            <ArrowRight className="h-4 w-4" />
-          </a>
         </div>
       </div>
     </nav>

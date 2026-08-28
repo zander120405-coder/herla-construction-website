@@ -51,18 +51,10 @@ export function Hero() {
             end-to-end project management.
           </p>
 
-          <div className="mt-7 flex gap-4">
-            <a
-              href="/quote"
-              className="flex h-13 min-w-[180px] items-center justify-center gap-3 bg-[#0874ff] px-7 text-xs font-bold uppercase tracking-wide text-white transition hover:bg-[#0064e6]"
-            >
-              Get a Quote
-              <ArrowRight className="h-4 w-4" />
-            </a>
-
+          <div className="mt-7 flex">
             <a
               href="/contact"
-              className="flex h-13 min-w-[180px] items-center justify-center gap-3 border border-white/55 bg-black/20 px-7 text-xs font-bold uppercase tracking-wide text-white backdrop-blur-sm transition hover:bg-white/10"
+              className="flex h-13 min-w-[190px] items-center justify-center gap-3 bg-[#0874ff] px-8 text-xs font-bold uppercase tracking-wide text-white transition hover:bg-[#0064e6]"
             >
               Contact Us
               <Phone className="h-4 w-4" />

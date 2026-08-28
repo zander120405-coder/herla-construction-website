@@ -117,7 +117,7 @@ export function FeaturedProjects() {
                     className="rounded-none uppercase tracking-widest font-bold text-xs group/btn"
                   >
                     <a href="#contact">
-                      Get a Quote
+                      Contact Us
                       <ArrowRight className="ml-2 w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
                     </a>
                   </Button>

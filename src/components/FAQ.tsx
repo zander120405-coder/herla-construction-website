@@ -10,10 +10,6 @@ import { Button } from "@/components/ui/button";
 
 const faqs = [
   {
-    q: "Do you offer free quotes?",
-    a: "Yes, always. We'll come out to your property, look at the job, and give you a clear written quote at no cost and no obligation. What we quote is what you pay — we don't add extras after the fact.",
-  },
-  {
     q: "Which areas do you work in?",
     a: "We serve all of Gauteng — a call-out fee may apply depending on your location. Just give us a call and we'll let you know if we can get to you.",
   },
